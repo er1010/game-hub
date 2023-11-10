@@ -19,7 +19,11 @@ const useGames = (gameQuary: GameQuary) =>
   useData<Game>(
     "/games",
     {
-      params: { genres: gameQuary.genre?.id, platform: gameQuary.platform?.id },
+      params: {
+        genres: gameQuary.genre?.id,
+        platform: gameQuary.platform?.id,
+        ordering: gameQuary.sortorder,
+      },
     },
     [gameQuary]
   );
